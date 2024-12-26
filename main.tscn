@@ -79,6 +79,8 @@ shape = SubResource("CylinderShape3D_d1h25")
 [node name="FloorChecker" type="RayCast3D" parent="CharacterBody3D"]
 target_position = Vector3(0, -0.5, 0)
 
+[node name="ShapeCast3D" type="ShapeCast3D" parent="CharacterBody3D"]
+
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
