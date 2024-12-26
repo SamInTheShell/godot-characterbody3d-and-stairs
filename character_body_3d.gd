@@ -31,8 +31,6 @@ func _physics_process(delta: float) -> void:
 	var forced_y_position : float = 0
 	var stair_lerp_rate : float = 12.0
 
-	var whatever = false
-
 	for i in stair_checker.collision_result:
 		var distance_to_y_point = Vector3(0,global_position.y, 0).distance_to(Vector3(0,i.point.y,0))
 		if distance_to_y_point < .6 and input_dir != Vector2.ZERO:
@@ -43,10 +41,6 @@ func _physics_process(delta: float) -> void:
 			elif floor_checker.get_collider():
 				var point = floor_checker.get_collision_point()
 				forced_y_position = lerp(global_position.y, point.y, delta * stair_lerp_rate)
-				whatever = true
-
-	if whatever:
-		print(stair_checker.collision_result)
 
 	move_and_slide()
 	
